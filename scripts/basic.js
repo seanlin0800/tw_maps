@@ -14,14 +14,14 @@
       .attr('width', width)
       .attr('height', height);
 
-  var g = svg.append("g").attr('transform', 'translate(-100,0)');
+  var g = svg.append('g').attr('transform', 'translate(0,0)');
 
   var zoom = d3.behavior.zoom()
       .scaleExtent([1, 5])
-      .on("zoom", function () {
+      .on('zoom', function () {
         g.attr(
-          "transform",
-          "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")"
+          'transform',
+          'translate(' + d3.event.translate + ')scale(' + d3.event.scale + ')'
         );
       });
 
@@ -36,7 +36,7 @@
       .enter().append('path')
         .attr('stroke', '#000')
         .attr('stroke-width', 1)
-        .attr('fill', function (d, i){
+        .attr('fill', function (d, i) {
           return color(i);
         })
         .attr('d', path);
