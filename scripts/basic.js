@@ -29,8 +29,8 @@
 
   var color = d3.scale.category20();
 
-  d3.json('json/twCounty2010.topo.json', function (error, json) {
-    topo = topojson.feature(json, json.objects.layer1);
+  d3.json('json/twCounty2014.topo.json', function (error, json) {
+    var topo = topojson.feature(json, json.objects.layer1);
     g.selectAll('path')
         .data(topo.features)
       .enter().append('path')
